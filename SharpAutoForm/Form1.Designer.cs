@@ -47,13 +47,13 @@
             this.AmountDueTextBox = new System.Windows.Forms.TextBox();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
             this.AdditionalItemsGroupBox = new System.Windows.Forms.GroupBox();
-            this.StereoSystemCheckBox = new System.Windows.Forms.CheckBox();
-            this.LeatherInteriorCheckBox = new System.Windows.Forms.CheckBox();
             this.ComputerNavigationCheckBox = new System.Windows.Forms.CheckBox();
+            this.LeatherInteriorCheckBox = new System.Windows.Forms.CheckBox();
+            this.StereoSystemCheckBox = new System.Windows.Forms.CheckBox();
             this.ExteriorFinishCheckBox = new System.Windows.Forms.GroupBox();
-            this.StandardRadioButton = new System.Windows.Forms.RadioButton();
-            this.PearlizedRadioButton = new System.Windows.Forms.RadioButton();
             this.CustomizedDetailingRadioButton = new System.Windows.Forms.RadioButton();
+            this.PearlizedRadioButton = new System.Windows.Forms.RadioButton();
+            this.StandardRadioButton = new System.Windows.Forms.RadioButton();
             this.ExitButton = new System.Windows.Forms.Button();
             this.CalculateButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
@@ -217,15 +217,15 @@
             this.AdditionalItemsGroupBox.TabStop = false;
             this.AdditionalItemsGroupBox.Text = "Additional Items";
             // 
-            // StereoSystemCheckBox
+            // ComputerNavigationCheckBox
             // 
-            this.StereoSystemCheckBox.AutoSize = true;
-            this.StereoSystemCheckBox.Location = new System.Drawing.Point(7, 20);
-            this.StereoSystemCheckBox.Name = "StereoSystemCheckBox";
-            this.StereoSystemCheckBox.Size = new System.Drawing.Size(94, 17);
-            this.StereoSystemCheckBox.TabIndex = 0;
-            this.StereoSystemCheckBox.Text = "Stereo System";
-            this.StereoSystemCheckBox.UseVisualStyleBackColor = true;
+            this.ComputerNavigationCheckBox.AutoSize = true;
+            this.ComputerNavigationCheckBox.Location = new System.Drawing.Point(7, 68);
+            this.ComputerNavigationCheckBox.Name = "ComputerNavigationCheckBox";
+            this.ComputerNavigationCheckBox.Size = new System.Drawing.Size(125, 17);
+            this.ComputerNavigationCheckBox.TabIndex = 2;
+            this.ComputerNavigationCheckBox.Text = "Computer Navigation";
+            this.ComputerNavigationCheckBox.UseVisualStyleBackColor = true;
             // 
             // LeatherInteriorCheckBox
             // 
@@ -237,15 +237,15 @@
             this.LeatherInteriorCheckBox.Text = "Leather Interior";
             this.LeatherInteriorCheckBox.UseVisualStyleBackColor = true;
             // 
-            // ComputerNavigationCheckBox
+            // StereoSystemCheckBox
             // 
-            this.ComputerNavigationCheckBox.AutoSize = true;
-            this.ComputerNavigationCheckBox.Location = new System.Drawing.Point(7, 68);
-            this.ComputerNavigationCheckBox.Name = "ComputerNavigationCheckBox";
-            this.ComputerNavigationCheckBox.Size = new System.Drawing.Size(125, 17);
-            this.ComputerNavigationCheckBox.TabIndex = 2;
-            this.ComputerNavigationCheckBox.Text = "Computer Navigation";
-            this.ComputerNavigationCheckBox.UseVisualStyleBackColor = true;
+            this.StereoSystemCheckBox.AutoSize = true;
+            this.StereoSystemCheckBox.Location = new System.Drawing.Point(7, 20);
+            this.StereoSystemCheckBox.Name = "StereoSystemCheckBox";
+            this.StereoSystemCheckBox.Size = new System.Drawing.Size(94, 17);
+            this.StereoSystemCheckBox.TabIndex = 0;
+            this.StereoSystemCheckBox.Text = "Stereo System";
+            this.StereoSystemCheckBox.UseVisualStyleBackColor = true;
             // 
             // ExteriorFinishCheckBox
             // 
@@ -259,16 +259,16 @@
             this.ExteriorFinishCheckBox.TabStop = false;
             this.ExteriorFinishCheckBox.Text = "Exterior Finish";
             // 
-            // StandardRadioButton
+            // CustomizedDetailingRadioButton
             // 
-            this.StandardRadioButton.AutoSize = true;
-            this.StandardRadioButton.Location = new System.Drawing.Point(7, 20);
-            this.StandardRadioButton.Name = "StandardRadioButton";
-            this.StandardRadioButton.Size = new System.Drawing.Size(68, 17);
-            this.StandardRadioButton.TabIndex = 0;
-            this.StandardRadioButton.TabStop = true;
-            this.StandardRadioButton.Text = "Standard";
-            this.StandardRadioButton.UseVisualStyleBackColor = true;
+            this.CustomizedDetailingRadioButton.AutoSize = true;
+            this.CustomizedDetailingRadioButton.Location = new System.Drawing.Point(7, 68);
+            this.CustomizedDetailingRadioButton.Name = "CustomizedDetailingRadioButton";
+            this.CustomizedDetailingRadioButton.Size = new System.Drawing.Size(123, 17);
+            this.CustomizedDetailingRadioButton.TabIndex = 2;
+            this.CustomizedDetailingRadioButton.TabStop = true;
+            this.CustomizedDetailingRadioButton.Text = "Customized Detailing";
+            this.CustomizedDetailingRadioButton.UseVisualStyleBackColor = true;
             // 
             // PearlizedRadioButton
             // 
@@ -281,16 +281,16 @@
             this.PearlizedRadioButton.Text = "Pearlized";
             this.PearlizedRadioButton.UseVisualStyleBackColor = true;
             // 
-            // CustomizedDetailingRadioButton
+            // StandardRadioButton
             // 
-            this.CustomizedDetailingRadioButton.AutoSize = true;
-            this.CustomizedDetailingRadioButton.Location = new System.Drawing.Point(7, 68);
-            this.CustomizedDetailingRadioButton.Name = "CustomizedDetailingRadioButton";
-            this.CustomizedDetailingRadioButton.Size = new System.Drawing.Size(123, 17);
-            this.CustomizedDetailingRadioButton.TabIndex = 2;
-            this.CustomizedDetailingRadioButton.TabStop = true;
-            this.CustomizedDetailingRadioButton.Text = "Customized Detailing";
-            this.CustomizedDetailingRadioButton.UseVisualStyleBackColor = true;
+            this.StandardRadioButton.AutoSize = true;
+            this.StandardRadioButton.Location = new System.Drawing.Point(7, 20);
+            this.StandardRadioButton.Name = "StandardRadioButton";
+            this.StandardRadioButton.Size = new System.Drawing.Size(68, 17);
+            this.StandardRadioButton.TabIndex = 0;
+            this.StandardRadioButton.TabStop = true;
+            this.StandardRadioButton.Text = "Standard";
+            this.StandardRadioButton.UseVisualStyleBackColor = true;
             // 
             // ExitButton
             // 
@@ -349,6 +349,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "AutoCenterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auto Center";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
