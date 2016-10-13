@@ -21,5 +21,10 @@ namespace SharpAutoForm
         {
 
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This program calculates the amount due on a new or used vehicle." + "\nAuto Centre\nVersion 1.0\n©2016 Mark Chipp\nAll rights reserved.");
+        }
     }
 }
