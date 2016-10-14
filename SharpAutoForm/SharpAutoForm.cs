@@ -1,4 +1,14 @@
-﻿using System;
+﻿///Application: Auto Centre Form for COMP1004 Assignment 2
+///Author: Mark Chipp
+///Student ID: 200180985
+///Created on: 06-Oct-2016
+///Last edited: 14-Oct-2016
+///This program calculates the amount due on a new or used vehicle based on varoius accessories
+///and options, and trade-in value (if applicable).
+///This file is the bulk of the program, holding variables to calculate, and performing
+///calculation functions.
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -123,11 +133,27 @@ namespace SharpAutoForm
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // this should allow user to change the font of the base cost and amount due text boxes
+            FontDialog fontDialog = new FontDialog();
+            fontDialog.Font = BasePriceTextBox.Font;
+
+            if (fontDialog.ShowDialog() != DialogResult.Cancel)
+            {
+                BasePriceTextBox.Font = fontDialog.Font;
+                AmountDueTextBox.Font = fontDialog.Font;
+            }
         }
 
         private void colourToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // this should allow user to change the colour of the base cost and amount due text boxes
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = BasePriceTextBox.BackColor;
+
+            if (colorDialog.ShowDialog() != DialogResult.Cancel)
+            {
+                BasePriceTextBox.BackColor = colorDialog.Color;
+                AmountDueTextBox.BackColor = colorDialog.Color;
+            }
         }
 
         //++++++++++++++++++FUNCTIONS++++++++++++++++++
@@ -208,6 +234,12 @@ namespace SharpAutoForm
             ComputerNavigationCheckBox.Checked = false;
             StandardRadioButton.Checked = true;
             AdditionalOptionsTextBox.Text = _additionalCosts.ToString("C2");
+
+            // Ensure base cost and amount due boxes font and colour match the rest
+            BasePriceTextBox.Font = SubTotalTextBox.Font;
+            AmountDueTextBox.Font = SubTotalTextBox.Font;
+            BasePriceTextBox.BackColor = SubTotalTextBox.BackColor;
+            AmountDueTextBox.BackColor = SubTotalTextBox.BackColor;
         }
 
         /// <summary>
