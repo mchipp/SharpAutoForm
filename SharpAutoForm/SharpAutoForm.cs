@@ -29,6 +29,8 @@ namespace SharpAutoForm
         public AutoCenterForm()
         {
             InitializeComponent();
+
+            // set initial additional costs text to match initial value
             AdditionalOptionsTextBox.Text = _additionalCosts.ToString("C2");
         }
 
@@ -42,71 +44,96 @@ namespace SharpAutoForm
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            // call Calculate() function
             Calculate();
         }
 
         private void StereoSystemCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            // If the Stere option button is checked or unchecked, add or subtract stereo value from additional costs value
             _additionalCosts += StereoSystemCheckBox.Checked ? _stereoSystemCost : -_stereoSystemCost;
             AdditionalOptionsTextBox.Text = _additionalCosts.ToString("C2");
         }
 
         private void LeatherInteriorCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            // If the leather interior option button is checked or unchecked, add or subtract leather interior value from additional costs value
             _additionalCosts += LeatherInteriorCheckBox.Checked ? _leatherInteriorCost : -_leatherInteriorCost;
             AdditionalOptionsTextBox.Text = _additionalCosts.ToString("C2");
         }
 
         private void ComputerNavigationCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            // If the computer navigation option button is checked or unchecked, add or subtract computer navigation value from additional costs value
             _additionalCosts += ComputerNavigationCheckBox.Checked ? _computerNavigationCost : -_computerNavigationCost;
             AdditionalOptionsTextBox.Text = _additionalCosts.ToString("C2");
         }
 
         private void StandardRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            // If the standard exterior button is checked or unchecked, add or subtract value from additional costs value
             _additionalCosts += StandardRadioButton.Checked ? _standardExteriorCost : -_standardExteriorCost;
             AdditionalOptionsTextBox.Text = _additionalCosts.ToString("C2");
         }
 
         private void PearlizedRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            // If the pearlized exterior button is checked or unchecked, add or subtract value from additional costs value
             _additionalCosts += PearlizedRadioButton.Checked ? _pearlizedExteriorCost : -_pearlizedExteriorCost;
             AdditionalOptionsTextBox.Text = _additionalCosts.ToString("C2");
         }
 
         private void CustomizedDetailingRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            // If the custom exterior button is checked or unchecked, add or subtract value from additional costs value
             _additionalCosts += CustomizedDetailingRadioButton.Checked ? _customDetailiExteriorCost : -_customDetailiExteriorCost;
             AdditionalOptionsTextBox.Text = _additionalCosts.ToString("C2");
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            // call ClearForm() function
             ClearForm();
         }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // call ClearForm() function
             ClearForm();
         }
 
         private void calculateToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // call ClearForm() function
             Calculate();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
+            // call ExitApplication() function
             ExitApplication();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // call ExitApplication() function
             ExitApplication();
         }
 
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // this should allow user to change the font of the base cost and amount due text boxes
+        }
+
+        private void colourToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // this should allow user to change the colour of the base cost and amount due text boxes
+        }
+
         //++++++++++++++++++FUNCTIONS++++++++++++++++++
+        /// <summary>
+        /// This function will add the values of the various text fields to find the total amount owing
+        /// </summary>
         private void Calculate()
         {
             try
@@ -118,22 +145,31 @@ namespace SharpAutoForm
                 double tradeInAllowance;
                 double amountDue;
 
+                // set the base cost text box to a currency formatted string
                 BasePriceTextBox.Text = subTotalCost.ToString("C2");
 
+                // add additional options to the sub total
                 subTotalCost += additionalItems;
 
+                // set the sub total text box to a currency formatted string
                 SubTotalTextBox.Text = subTotalCost.ToString("C2");
 
+                // calculate sales tax and set the sales tax text box to a currency formatted string
                 salesTaxAmount = calculateSalesTax(subTotalCost);
                 SalesTaxTextBox.Text = salesTaxAmount.ToString("C2");
+
+                // calculate total amount and set total amount text box to a currency formatted string
                 totalAmount = (subTotalCost + salesTaxAmount);
                 TotalTextBox.Text = totalAmount.ToString("C2");
 
+                // set trade in allowance to double format of trade in allowance text box
                 tradeInAllowance = Convert.ToDouble(double.Parse(TradeInAllowanceTextBox.Text, NumberStyles.Currency));
+
+                // set the trade in allowance text box to a currency formatted string
                 TradeInAllowanceTextBox.Text = tradeInAllowance.ToString("C2");
 
+                // calculate the amount due and set the amount due text box to a currency formatted string
                 amountDue = totalAmount - tradeInAllowance;
-
                 AmountDueTextBox.Text = amountDue.ToString("C2");
             }
             catch (Exception exception)
@@ -144,11 +180,19 @@ namespace SharpAutoForm
             }
         }
 
+        /// <summary>
+        /// This function calculates the sales tax
+        /// </summary>
+        /// <param name="subTotal"></param>
+        /// <returns></returns>
         private double calculateSalesTax(double subTotal)
         {
             return subTotal * 0.13;
         }
 
+        /// <summary>
+        /// This function will clear the entire form and allow the user to start over
+        /// </summary>
         private void ClearForm()
         {
             BasePriceTextBox.Text = "$0.00";
@@ -166,6 +210,9 @@ namespace SharpAutoForm
             AdditionalOptionsTextBox.Text = _additionalCosts.ToString("C2");
         }
 
+        /// <summary>
+        /// This function exits the application
+        /// </summary>
         private static void ExitApplication()
         {
             Application.Exit();
