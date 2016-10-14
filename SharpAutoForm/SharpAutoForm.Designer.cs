@@ -91,8 +91,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // EditStripMenuItem
             // 
@@ -110,23 +111,25 @@
             this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
             this.calculateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.calculateToolStripMenuItem.Text = "&Calculate";
+            this.calculateToolStripMenuItem.Click += new System.EventHandler(this.calculateToolStripMenuItem_Click);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
             this.clearToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clearToolStripMenuItem.Text = "C&lear";
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // fontToolStripMenuItem
             // 
             this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.fontToolStripMenuItem.Text = "&Font";
             // 
             // colourToolStripMenuItem
             // 
             this.colourToolStripMenuItem.Name = "colourToolStripMenuItem";
-            this.colourToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.colourToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.colourToolStripMenuItem.Text = "C&olour";
             // 
             // HelpStripMenuItem
@@ -188,7 +191,6 @@
             this.TotalLabel.Size = new System.Drawing.Size(34, 13);
             this.TotalLabel.TabIndex = 5;
             this.TotalLabel.Text = "Total:";
-            this.TotalLabel.Click += new System.EventHandler(this.TotalLabel_Click);
             // 
             // TradeInAllowanceLabel
             // 
@@ -214,6 +216,7 @@
             this.BasePriceTextBox.Name = "BasePriceTextBox";
             this.BasePriceTextBox.Size = new System.Drawing.Size(100, 20);
             this.BasePriceTextBox.TabIndex = 8;
+            this.BasePriceTextBox.Text = "0";
             // 
             // AdditionalOptionsTextBox
             // 
@@ -276,7 +279,7 @@
             this.AdditionalItemsGroupBox.Size = new System.Drawing.Size(200, 100);
             this.AdditionalItemsGroupBox.TabIndex = 15;
             this.AdditionalItemsGroupBox.TabStop = false;
-            this.AdditionalItemsGroupBox.Text = "Additional Items";
+            this.AdditionalItemsGroupBox.Text = "Additional Options";
             // 
             // ComputerNavigationCheckBox
             // 
@@ -287,6 +290,7 @@
             this.ComputerNavigationCheckBox.TabIndex = 2;
             this.ComputerNavigationCheckBox.Text = "Computer Navigation";
             this.ComputerNavigationCheckBox.UseVisualStyleBackColor = true;
+            this.ComputerNavigationCheckBox.CheckedChanged += new System.EventHandler(this.ComputerNavigationCheckBox_CheckedChanged);
             // 
             // LeatherInteriorCheckBox
             // 
@@ -297,6 +301,7 @@
             this.LeatherInteriorCheckBox.TabIndex = 1;
             this.LeatherInteriorCheckBox.Text = "Leather Interior";
             this.LeatherInteriorCheckBox.UseVisualStyleBackColor = true;
+            this.LeatherInteriorCheckBox.CheckedChanged += new System.EventHandler(this.LeatherInteriorCheckBox_CheckedChanged);
             // 
             // StereoSystemCheckBox
             // 
@@ -307,6 +312,7 @@
             this.StereoSystemCheckBox.TabIndex = 0;
             this.StereoSystemCheckBox.Text = "Stereo System";
             this.StereoSystemCheckBox.UseVisualStyleBackColor = true;
+            this.StereoSystemCheckBox.CheckedChanged += new System.EventHandler(this.StereoSystemCheckBox_CheckedChanged);
             // 
             // ExteriorFinishCheckBox
             // 
@@ -330,6 +336,7 @@
             this.CustomizedDetailingRadioButton.TabStop = true;
             this.CustomizedDetailingRadioButton.Text = "Customized Detailing";
             this.CustomizedDetailingRadioButton.UseVisualStyleBackColor = true;
+            this.CustomizedDetailingRadioButton.CheckedChanged += new System.EventHandler(this.CustomizedDetailingRadioButton_CheckedChanged);
             // 
             // PearlizedRadioButton
             // 
@@ -341,6 +348,7 @@
             this.PearlizedRadioButton.TabStop = true;
             this.PearlizedRadioButton.Text = "Pearlized";
             this.PearlizedRadioButton.UseVisualStyleBackColor = true;
+            this.PearlizedRadioButton.CheckedChanged += new System.EventHandler(this.PearlizedRadioButton_CheckedChanged);
             // 
             // StandardRadioButton
             // 
@@ -353,6 +361,7 @@
             this.StandardRadioButton.TabStop = true;
             this.StandardRadioButton.Text = "Standard";
             this.StandardRadioButton.UseVisualStyleBackColor = true;
+            this.StandardRadioButton.CheckedChanged += new System.EventHandler(this.StandardRadioButton_CheckedChanged);
             // 
             // ExitButton
             // 
@@ -363,6 +372,7 @@
             this.ExitButton.TabIndex = 17;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // CalculateButton
             // 
@@ -384,6 +394,7 @@
             this.ClearButton.TabIndex = 19;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // AutoCenterForm
             // 
